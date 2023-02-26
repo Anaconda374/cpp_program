@@ -1,0 +1,1 @@
+#include<iostream>#include "d:\cpp_program\cpp_headers\Sales_item.h"int main(){    Sales_item tra;    Sales_item book1 ;        while(std::cin >> tra){        book1 = tra + book1;              // Reads several transanctions for the same IBSN.    }    std::cout << book1 << std::endl;        return 0;}
