@@ -43,8 +43,8 @@ int main()
     //replace all '2's in 'iarr' with '-1'.
     printArray(begin(iarr), end(iarr));
     
-    
-//5.'replace_copy(1stIter1, 1stIter2, destIter1, origialValue, newValue)' is compound function which firstly copy the elements into destination container, and replace the origialValue in new copied elements(others elements in destination not included.). 
+                               
+//5.'replace_copy(1stIter1, 1stIter2, destIter1, origialValue, newValue)' is compound function which firstly copy the elements into destination container, and replace the originalValue in new copied elements(others elements in destination not included.). 
     int iarr2[10]={0};
     printArray(begin(iarr2), end(iarr2));
     replace_copy(begin(iarr), (begin(iarr)+4), begin(iarr2), 0, -1);
