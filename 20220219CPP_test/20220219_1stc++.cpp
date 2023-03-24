@@ -4,6 +4,6 @@ int main()
 {
     std::cerr<<"error_test"<<std::endl;
     
-    printf("hello,world!");
+    printf("hello,world, test_git");
     return 0 ;
 }
