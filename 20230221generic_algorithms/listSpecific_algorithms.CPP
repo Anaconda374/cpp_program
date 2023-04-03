@@ -3,7 +3,7 @@
 #include<vector>
 #include<list>
 #include<algorithm>
-#include "d:\github\cpp_program\cpp_headers\ContainerPrinter.h"
+#include "d:\cpp_program\cpp_headers\ContainerPrinter.h"
 
 
 using namespace std;
@@ -36,7 +36,7 @@ int main()
     list<string> lst4 = {"jueves", "viernes", "sabado"};
     lst3.splice(lst3.end(), lst4);//first argument is an iterator that denotes the start position in 'lst1' for splicing.
     printList(lst3);
-    printList(lst4);
+    printList(lst4);//after splice operation,lst4 is emptied.
     
     return 0;
 }

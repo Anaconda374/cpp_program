@@ -30,6 +30,11 @@ int main()
     cout<<"size: " <<vec1.size() <<"\n"
     << "capacity: " << vec1.capacity()<< endl;
     
-
+//the size of 2 dimensional vector:
+    vector<vector<string> > twoDimVec;
+    twoDimVec.push_back(vec1);
+    twoDimVec.push_back(vec1);
+    twoDimVec.push_back(vec1);
+    cout<<"size of 2 dimensional vector: " <<twoDimVec.size() <<"\n"<< endl;
     return 0;
 }

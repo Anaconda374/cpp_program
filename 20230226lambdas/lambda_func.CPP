@@ -22,7 +22,7 @@ Syntax of Lambda definition:
     [capture]: a comma-separated list of zero or more captures, so we can capture local variables defined before the lambda. captures can be passed by either 'copied_value' or 'reference'
       [&] : capture all external variables by reference 
       [=] : capture all external variables by value 
-      [a, &b] : capture a by value and b by reference
+      [a, &b] : capture 'a' by value and 'b' by reference
 *   
     (parameter list): unlike the normal function, we can not define the parameters arbitrarily since the lambda function should be pass to another function, so the type and number of its parameters must match to that target function.
 */
@@ -52,7 +52,7 @@ int main()
     cout<< val << endl;
 /*
 NOTE:
-    A lambda can only be converted to a function pointer if it does not have capture. When we pass a lambda as a pointer_to_function, it only passed the functionality defined by the lambda. 
+    A lambda can only be converted to a function pointer if it does not have capture. Because when we pass a lambda as a pointer_to_function, it only passed the functionality defined by the lambda. 
     However, if you want to pass the entire object that gets created by the lambda, including the variables captured in the brackets, you need to pass it as a function object instead, not just a function pointer. 
 */
       
@@ -65,9 +65,8 @@ NOTE:
     int addVal = 5;
     
     //for_each(iter1, iter2, unary_function) is a library algorithm.
-    for_each(iVec.begin(), iVec.end(), [addVal](int& i){
-        i = i + addVal;//add each element with the local variable 'addVal'.
-    });
+    for_each(iVec.begin(), iVec.end(), [addVal](int& i){i = i + addVal;});
+    //add each element with the local variable 'addVal'.
     printVector(iVec);
     
     //we also pass a self_defined function(which can not take capture) instead of a inline 'lambda'. 

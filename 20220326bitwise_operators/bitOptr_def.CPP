@@ -73,7 +73,7 @@ int main()
     std::cout<< std::bitset<32>(total_quiz) << std::endl;
     //Check the result of the student NO.9:
     bool no9Status = total_quiz & (1UL << 9); //only NO.9 bit remains 1, all other bits are 0s.
-    std::cout<< no9Status << std::endl;
+    std::cout<< std::bitset<32>(no9Status) << std::endl;
 
 
     return 0;
