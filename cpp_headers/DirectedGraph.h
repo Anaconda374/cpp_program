@@ -31,9 +31,9 @@ public:
             cout << "\n Adjacency list of vertex " << v
                 << "\n head ";
             for(auto x : this->adjList[v]){
-                cout << "-> " << x;
-                printf("\n");
+                cout << "-> " << x;  
             }
+            printf("\n");
         }
     }
     
