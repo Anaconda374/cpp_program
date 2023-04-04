@@ -27,15 +27,17 @@ public:
     }
     
     void printGraph(){//adjList[0] is a sentinel, not used.
-        for (int v = 1; v < (this->vertexNum); ++v) {
+        for(unsigned int v = 1; v < (this->vertexNum); ++v) {
             cout << "\n Adjacency list of vertex " << v
                 << "\n head ";
-            for (auto x : this->adjList[v])
+            for(auto x : this->adjList[v]){
                 cout << "-> " << x;
                 printf("\n");
+            }
         }
     }
     
+
 };
 
 
