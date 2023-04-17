@@ -38,8 +38,7 @@ struct Sales_data {
      */
     std::string bookNO;
     
-    //'units_sold
-    ' and 'revenue' are initialized with '0'.
+    //'units_sold' and 'revenue' are initialized with '0'.
     unsigned units_sold = 0;
     double revenue = 0.0;
     
