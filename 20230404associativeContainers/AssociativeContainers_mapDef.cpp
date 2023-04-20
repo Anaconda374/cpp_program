@@ -3,6 +3,7 @@
 
 
 /*
+    In C++, 'std::map' is implemented as a self-balancing binary search tree, specifically a red-black tree. This means that std::map provides logarithmic time complexity for operations such as insertion, deletion, and search.
     like the sequential containers, the associative containers are templates. whenever we define or declare a 'map', we must specify both the key and value types.
 */
 

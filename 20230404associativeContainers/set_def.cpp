@@ -24,7 +24,14 @@ int main(){
         std::cout<<"not present :( ..." <<std::endl;
     }
     else{
-        std::cout<< "Yes, it is present :) !";
+        std::cout<< "Yes, it is present :) ! \n";
     }
+
+//we can also use '.count(...)' member function to check whether a key is stored in set, or check whether a key is unique or duplicate in a 'multiset'.
+    std::string key = "kuan";
+    if(strSet.count(key) > 0){
+        std::cout<< key << " is exsited." << std::endl;
+    }
+
     return 0;
 }

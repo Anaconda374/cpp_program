@@ -1,6 +1,7 @@
 #include<iostream>
 #include<map>
 #include<set>
+#include<iterator>
 
 /*
     Associative containers also have 'iterators' as the normal sequential containers have, such as '.begin()' and '.end()', but has slightly different features.
@@ -25,6 +26,14 @@ int main(){
         std::cout<< *setIter <<std::endl;
         ++setIter;
     }
+
+/*
+Arithmetical operations to iterators of associative container:
+    Since 'std::set' is implemented as a binary search tree, the elements are not stored contiguously in memory, and it is not possible to use the addition operator to directly move the iterator forward by a certain number of positions. Instead, you can use the std::advance function to increment the iterator by a certain number of positions. 
+*/
+    auto it = meses.begin();
+    std::advance(it, 2);//equivalent to "it = it + 2;"
+    std::cout<< it->second <<std::endl;
 
     return 0;
 }
