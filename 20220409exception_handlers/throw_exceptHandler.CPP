@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include"D:\cpp_program\cpp_headers\Sales_item.h"
-#include<stdexcept>
+#include<stdexcept>//error exception functions is defined in header<stdexcept> under the namespace'std'.
 
 /*  
    "A throw" expression consists of the keyword 'throw' followed by an expression. We say that "a throw" raises an exception means if the detecting part(usually a if_statement) encountered something anomalous, then the program throws a exception expression. 
