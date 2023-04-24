@@ -39,6 +39,7 @@ int main(){
         /* if 'word' is not already in map 'word_count', the following 'subscript_operator' creates a new element whose key is 'word' with the value '0'. */
     }
     printMap(word_count);
+    std::cout<<word_count.size()<<std::endl;   
 /*
 NOTE: Associative container do not support  the sequential_container position_specific operations, such as '.push_back()' or '.push_front()':
     Because all elements in an ordered associative container('map','set','multimap' and 'multiset') will be arreranged in ASCII order according to the 'keys'(ascending order by default), those operations would be meaningless for the associative containers. 

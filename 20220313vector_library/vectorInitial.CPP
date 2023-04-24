@@ -33,7 +33,7 @@ int main()
         
 //constructing_initialization/Element_count initialization:
     vector<int> ivec3(10,6);//construct 'vector_ivec3' by 10 elements with value 6.
-    vector<int> ivec4(5); //construce 'vector_ivec4' by 5 elements with default_value(0).
+    vector<int> ivec4(5); //construct 'vector_ivec4' by 5 elements with default_value(0).
     cout << ivec3[0] <<"\n"
          <<  ivec4[3] <<"\n"
          <<endl;
