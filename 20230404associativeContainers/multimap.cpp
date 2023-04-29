@@ -39,6 +39,20 @@ int main(){
     auto keyValue = mulmp.equal_range("lunes");
     auto test = mulmp.equal_range("martes");
     
+    //'count' the number of pairs of given key in multimap:
+    std::cout<<"The number of lunes in multimap: "<< mulmp.count("lunes") <<std::endl;
+
+    /*
+    use iterator to access the pairs in multimap:
+        NOTE:
+    */
+    auto it = mulmp.begin(); 
+    std::cout<<"The first pair is: "<< it->first << " "<<it->second <<std::endl;
+    ++it;
+    std::cout<<"The second pair is: "<< it->first << " "<<it->second<<std::endl;
+    ++it;
+    std::cout<<"The third pair is: "<< it->first << " "<<it->second<<std::endl;
+
     //get a first value of key 'lunes' by dereference the key-value structure.
     std::cout<< keyValue.first->second << std::endl;
 

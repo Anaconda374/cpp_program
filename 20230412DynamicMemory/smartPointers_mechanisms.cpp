@@ -6,7 +6,8 @@ int main(){
 /*
 'shared_ptr' smart pointers are implemented using "reference counting", which is a technique used to manage the lifetime of an object:
     Each 'shared_ptr' keeps track of how many other 'shared_ptr's point to the same object.
-    when a 'shared_ptr' is created, a related 'reference_count' structure is created too, which records how many references bound to the same object. Once a shared_ptr's counter goes to 0, the shared_ptr automatically frees the object that it manages:
+    when a 'shared_ptr' is created, a related 'reference_count' structure is created too, which records how many references bound to the same object. We can check the reference count by calling '.use_count()'.
+    Once a shared_ptr's counter goes to 0, the shared_ptr automatically frees the object that it manages:
 *
     "count increments" -- whenever we copy a shared_ptr to another, For example:
         1. when we use it to initialize another shared_ptr; 
@@ -23,6 +24,9 @@ int main(){
     //assign to 'r', making 'r' point to a different address:
     r = p; //increase the use count for the object to which q points.
     std::cout << " r points to: " << *r <<std::endl;
+
+    //'/.use_count' checks the reference count:
+    std::cout<<"The number of objects sharing with 'r': " <<r.use_count() <<std::endl;
 
 /*
 'weak_ptr' is a sub_type of shared_ptr, but assgin a 'shared_ptr' to a 'weak_ptr' the reference_count does not increment. Once all shared_ptrs is destroyed, the bounded memory will be freed automatically no matter whether the weak_ptrs is destroyed.
