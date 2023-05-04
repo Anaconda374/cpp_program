@@ -71,7 +71,7 @@ The Deleter_function of 'shared_ptr':
 */
     int* pi = new int(2023);
     std::shared_ptr<int> sp6(pi, freeMemory);
-    //'sp6' assumes the owenership from 'pi', when 'sp6' is destoryed, it won't execute 'delete' on its stored pointer'pi'. Instead, 'sp6' will use the callable object 'freeMemory' on that pointer. Thus, the memory to which 'pi' points will freed.   
+    //'sp6' assumes the owenership from 'pi', when 'sp6' is destoryed or 'reset', it won't execute 'delete' on its stored pointer'pi'. Instead, 'sp6' will use the callable object 'freeMemory' on that pointer. Thus, the memory to which 'pi' points will freed.   
  
     return 0;
 }
