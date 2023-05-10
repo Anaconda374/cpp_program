@@ -1,17 +1,25 @@
 #include<stdio.h>
 #include<iostream>
-#include<cmath>
+#include<vector>
+#include<algorithm>
+
+void printVector(std::vector<int> vec){
+    for(auto i : vec){
+        std::cout<< i<<std::endl;
+    }
+}
 
 int main()
 {
-    int temp = 100;
-    int sum = 0;
-    while(temp){
-        sum = sum + pow(temp%10, 2);
-            temp = temp / 10;
-    }
-    std::cout<< sum <<std::endl;
-    
-    printf("hello,world!, test2!");
-    return 0 ;
+    std::vector<int> iVec = {1, 2, 3, 5};
+    int val =  iVec.back();
+    auto it = std::find(iVec.begin(), iVec.end(), 3);
+    std::vector<int> vec1(iVec.begin(), iVec.begin());
+    std::vector<int> vec2(it+1, iVec.end());
+    std::cout<<"vec1 size is: "<<vec1.size()<<std::endl;
+ 
+    printVector(vec1);
+    std::cout<<"\n"<<std::endl;
+    printVector(vec2);
+
 }
