@@ -27,7 +27,7 @@ int main(){
    
     
 //'.destroy()' runs the destructor on the pointed_to object which used to destroy an object(but not deallocate the memory):
-    //after 'for' loop above, 'p' is pointing to the one past the last constructed element. 
+    //after 'for' loop "above", 'p' is pointing to the one past the last constructed element. 
     for(std::size_t j = 3; j > 0; --j){
         alloc.destroy(--p);
         // std::cout<<*p <<std::endl; //Disaster: dereference a pointer which points to unconstructed memory.

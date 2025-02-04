@@ -10,6 +10,21 @@
    The cast_operators inform both the readers and the compiler that we are aware of and are not concerned about the potential loss of precision. 
  */
 
+//clase base:
+class Felino{
+public:
+    int piesNum = 4;
+};
+
+//clase derivada
+class Gato:public Felino{
+public:
+    std::string nombre = "desconocido";
+    Gato(std::string s){
+        nombre = s;
+    }
+};
+
 int main()
 {   
     int i = 5, j = 2;
@@ -32,7 +47,7 @@ int main()
 
 
 /* "Const Casts": 
- * It is used to convert a 'low_ level const' object to the corresponding "nonconst type" or vice versa. Called "cast away the constness of objects".
+ * It is used to convert a 'low_ level const' object to the corresponding "nonconst type" or vice versa. Called "cast away the constness of objects" or "cast to a nonconst object".
  */
     const int ci = 5;
     //char c2 = const_cast<int>(ci); //ERROR, top_level const is cannot be casted away. 
@@ -56,16 +71,24 @@ int main()
 
 
 /* "Reinterpret Casts": Dangerous!
- * Interprets the contents of the operand as a different type, It can be used to convert a pointer of some data type into a pointer of another data type, even if the basic data types before and after conversion are different.
+    Interprets the contents of the operand as a different type(except converting between interger and pointer), It can be used to convert a pointer of some data type into a pointer of another data type, even if the basic data types before and after conversion are different.
+    
  */
  
     int *ip;
     char *pc = reinterpret_cast<char*>(ip);//Dangerous! convert an 'int*' to 'char*'.
     
-    /* Because 'reinterpret_cast' simply converts the pointer type and does not check if the pointer type and data pointed by the pointer is same or not, it generally performs a low_level reinterprtation of the bit pattern of its operands, and it is often used when we want to work with bits. 
+    /* Because 'reinterpret_cast' simply converts the pointer type and does not check if the pointer type and data pointed by the pointer is same or not, it generally performs a low_level reinterpretation of the bit pattern of its operands, and it is often used when we want to work with bits. 
      */
+
+/*
+"dynamic_cast <tipo_destino> (expresión)": The dynamic_cast operator ensures that if you convert a pointer to class A to a pointer to class B , the object of type A pointed to by the former belongs to an object of type B or a class derived from B as a base class subobject.
+*/  
+    Felino* a;
+    Gato* b = new Gato("Juan");
+    a = dynamic_cast<Felino*>(b); 
     
-    
+
 // "Old-style Casts": inherited from C language and not recommended in C++; "(type)expr" .
 
     char *pc2 = (char*)ip; //equivalent to last statement.

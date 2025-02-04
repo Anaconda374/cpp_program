@@ -14,8 +14,7 @@ mechanism:
 class Account{
 public:
     Account() = default;
-    Account(std::string name, double money):ownerName(name),
-    amount(money){}
+    Account(std::string name, double money):ownerName(name),amount(money){}
     
 //the 'static' and 'mutable' members can be changed in const member functions:    
     void test_changeStatic(double d) const {

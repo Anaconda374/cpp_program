@@ -17,7 +17,7 @@ int main()
         In this call of "print", the 'N' in the definition is substituted by 'int' in compiling time, since the complier can recognize '7' is a basic 'int' type.
      */
      
-    print("anacs");//In this call, 'N' is substituted by 'std::string'.
+    print<std::string>("anacs");//In this call, 'N' is substituted by 'std::string'.
     
     return 0;
 }

@@ -18,17 +18,19 @@ int main()
     while (std::cin >> item1 >> item2){
         try {
             if(item1.isbn() != item2. isbn()){
-            throw std::runtime_error("Data must refer to same ISBN");
+            throw std::invalid_argument("Data must refer to same ISBN");
             /* The throw expression has type 'std::runtime_error' which allows us to output
              * "an error alert".
-             */.
+             */
+            }
+            if(item1.avg_price() > 100 || item2.avg_price()>100){
+                throw std::out_of_range("The price can not greater than 100");
             }
             std::cout << item1 + item2 << std::endl;
             
-        }catch (std::runtime_error errMessage){
-        /* Exception declaration 'catch(decl)' specifies the type of exceptions the catch 
-         * can handle,catch "runtime_error" type exception and use it to define a 
-         * object'errMessage' if it is thrown in 'try'.
+        }catch (std::exception& errMessage){
+        /* 
+        Exception declaration 'catch(decl)' specifies the type of exceptions the catch can handle, 'std::exception' can catch any type of exception defined in STL and use it to define a  object'errMessage' if it is thrown nin 'try'.
          */
           std::cout << errMessage.what()
             /* '.what()' is a member function of Class'runtime_error', each of the library 

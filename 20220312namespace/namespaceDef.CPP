@@ -15,20 +15,29 @@ using namespace std;
  */
 namespace apple{
     void print(){
-     std::cout<<"apple namespace." <<std::endl;   
+        std::cout<<"apple namespace." <<std::endl;   
     }
 }
 
 namespace orange{
-     void print(){
-     std::cout<<"orange namespace." <<std::endl;   
+    void print(){
+        std::cout<<"orange namespace." <<std::endl;   
     }
+    void testFunc();
 }
+
+//And we can even define the function outside of the namespace:
+void orange::testFunc(){
+    std::cout<<"this function can be defined outside of the namespace"<<std::endl;
+}
+
 int main()
 {
     apple::print();
     namespace o = orange;//we can create an alias of the namespace.
     o::print();
+    // testFunc(); //ERROR, even the function is defined outside of scope, but it's declared as under the Namespace'orange', such that we can not call it directly.
+    orange::testFunc(); //OK.
     
     return 0;
 }
